@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyNotes</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      background-color: #343a40; /* Dark background */
+      color: #fff; /* White text */
+    }
+    form {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #444; /* Darker border for visibility */
+      border-radius: 4px;
+      font-size: 16px;
+      color: #06f370; /* White text */
+    }
+    button[type="submit"] {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: #28a745; /* Green button */
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #444; /* Darker border for visibility */
+      font-size: 16px;
+      color: #10e21a; /* White text */
+    }
+  </style>
+</head>
+<body>
+
+ 
+    <div>
+        <h3>MyNotes</h3>
+        <h5>Application By Innomatics Research labs</h5>
+    </div>
+  <form method="POST" action="/">
+    <input type="text" name="note" placeholder="Enter a note">
+    <button type="submit">Add a Note</button>
+  </form>
+
+  <ul>
+    <h3>Your Notes</h3>
+    {% for note in notes %}
+      <li>{{ note }}</li>
+    {% endfor %}
